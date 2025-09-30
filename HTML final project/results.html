@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Color Results</title>
+    <style>
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #fff0f5;
+            color: #dc97a5;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Aura Color Results</h1>
+    <p>Based on your answers, here is what we know about you vibe:</p>
+    
+    <div class="result box">
+        <p><strong>Name:</strong> <span id="name"></span></p>
+        <p><strong>Favorite Fruit:</strong> <span id="fruit"></span></p>
+        <p><strong>Current Mood Beverage:</strong> <span id="drink"></span></p>
+        <p><strong>Best Day Type:</strong> <span id="dayType"></span></p>
+        
+        <p><strong>Your Aura Color Is:</strong></p>
+        <div id="auraColor" class="aura-color">[Aura Color]</div>
+        <div id="auraDescription">[Aura description will appear here]</div>
+    </div>
+    <!--this defines the results selected on the index page, and shows their aura color and its description using placeholders such as <span> and <div>-->
+    <!--<span> is a inline HTML elemt that is used to group small bits of text for styling or scripting without breaking the flow-->
+    <!--<div> is a block-level HTML elemt that is used to group larger sections or blocks of content, for styling or scripting purposed -->    
+
+    <img id="auraImage" src="" alt="Aura image or gif" style="display:none;">
+    <!--defines a inital hidden image element with an ID of "auraImage" that cen display the aura image when shown-->
+
+    <script>
+        const params = new URLSearchParams (window.location.search);
+        <!--This creates an object to easily acces the URL parameters from the current page, i did this because it reads and uses the dats passed in the URL query string.-->
+        
+        const name = params.get ('username') || 'Mystery Babe';
+        const fruit = (params.get ('fruit') || ''). toLowerCase(); 
+        const drink = (params.get ('drink')|| ''). toLowerCase();
+        const day = (params.get ('day_type')|| ''). toLowerCase();
+
+        /*this code retrives the URL parameters, assigns defalut values if missing (MysteryBabe) and converts everything to lowecare for conistance and also I prefer lowercase*/
+        
+        document.getElementById('name').textContent;name;
+        document.getElementById('fruit').textContent=fruit;
+        document.getElementById('drink').textContent=drink;
+        document.getElementById('dayType').textContent=day;
+        /*this sets the text content of elemts with IDs to display the corresponding variable values on the webpage*/
+
+        let auraColor =''; 
+        let description =''; 
+        let bgColor =''; 
+        let imgSrc =''; 
+        /*this declares that the four empty variables later store values related to aura properties*/
+
+        
+        if (fruit ==='strawberries' && drink ==='tea' && day === 'sunday reset'){
+            auraColor = 'Cotton Candy Pink'; 
+            description = "Soft, Sweet, and slightly chaotic in a good way. You radiate good vibes and glitter.";
+            bgColor = '#ffb6c1';
+            imgSrc ='cottoncandy.jpg';
+        } else if (fruit === 'grapes' && drink ==='coffee' && day === 'concert'){
+            auraColor = 'Cherry Red';
+            description = "You are bold, passionate, and ready to turn every room into your stage.";
+            bgColor = '#e32636';
+            imgSrc = 'cherryred.jpg'; 
+        } else if (fruit === 'apples' && drink === 'hot chocolate' && day === 'rainy book day'){
+            auraColor = 'Purple Dream';
+            description = "You are cozy, thoughtful, and a mysterious romantic. People around you feel safe around your aura.";
+            bgColor ='#9370db';
+            imgSrc = 'purpledream.jpg'; 
+        } else if (fruit ==='kiwi' && drink ==='lemonade' && day === 'morning run'){
+            auraColor = 'Green Glow';
+            description = "Fresh, powerful, and grounded. You're tapped into nature and your higher self.";
+            bgColor = '#7cfc00';
+            imgSrc = 'greenglow.jpg';
+        } else {
+            auraColor = "Mystery Aura";
+            description = "You're unpredictable-in the best way. Your aura defines defintion. Iconic.";
+            bgColor = '#8a2be2';
+            imgSrc = 'mystery.jpg';
+        }
+        /*this sets diffrent aura answers to specific combinations, with a default "Mystery Aura" if no match is found*/
+
+    const auraDiv = document.getElementById ('auraColor');
+    auraDiv.textContent = auraColor;
+    auraDiv.style.backgroundColor = bgColor;
+    /*this code selects the elemt with ID 'auraColor' and sets its text to the chosen aura color*/
+
+    document.getElementById ('auraDescription').textContent = description;
+    /*this sets the text inside the element with a ID of 'auraDescription' to show the aura's descriptive message*/
+    
+    const img = document.getElementById ('auraImage');
+    img.src = imgSrc;
+    img.style.display = 'block';
+    /*thsi code selects the image element with an ID of 'auraImage' and sets it to the chosen image file and makes the image visable by changing its display style to 'block'*/
+
+ </script>
+    <p><strong>Rate your happiness with the results:</strong></p>
+    <label for="resulthappiness"></label>
+    <input type="range" name="result" id="resultlevel" min="1" max="10" value="5" width= 80% accent-color="#F59C9A">
+    <span style="display:none;">this code displays a happiness rating prompt with a slider input, in a pink color</span>
+
+    <ol></ol><button onclick="goBackToIndex ()">Take the Quiz Again</button>
+    <span style="display:none;">this adds a button that when clicked takes you back to the index page, running the goBackToIndex() function</span>
+
+    <ol></ol> <a href="https://www.centreofexcellence.com/the-complete-guide-to-auras/#:~:text=An%20aura%20is%20a%20colour,thoughts%2C%20feelings%2C%20and%20experiences.">Here is more information about auras!!</a>
+    <span style="display:none;">this code adds a link to an external page with more info about auras</span>
+</body>
+</html>

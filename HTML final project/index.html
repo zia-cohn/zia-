@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Page</title>
+    <style>
+        this styles the page with a cute font and pink text/background.annotations
+        body {
+           font-family :Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+           background-color: #f7c1d3;
+           color: #dc97a5;
+           text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!--this titles the page and tells you what my project is about-->
+    <h1>What is you Aura Color?</h1>
+    <p>Everyone has a aura, a invisible <strong>vibe</strong> that surrounds them. So what is your true aura color? </p>
+    <ol></ol>
+    
+<form action="results.html" method="get">
+    <!--this creates a form that sends your inputs as a URL parameters to the results.html page using the GET method-->
+    
+    <p><strong>1. What is your name?</strong></p>
+    <input type="text" name="username" placeholder="Enter your name here">
+    <ol> </ol>
+    <!--this displays a bolded question of the user's name, provinging a text input feild with a placeholder-->
+    
+    <p><strong> 2. What is your favorite fruit?</strong></p>
+    <input type="radio" name="fruit" value="strawberries" id="option1">
+    <label for="option1">Strawberries</label>
+    <br>
+    <input type="radio" name="fruit" value="apples" id="option2">
+    <label for="option2">Apples</label>
+    <br>
+    <input type="radio" name="fruit" value="grapes" id="option3">
+    <label for="option3">Grapes</label>
+    <br>
+    <input type="radio" name="fruit" value="kiwi" id="option4">
+    <label for="option4">Kiwi</label>
+    <!--this asks for the user's favorite fruit from the list, using a four radio button options-->
+
+    <p><strong>3. Pick a bevrage that calls to you as of right now</strong></p>
+    <input type="radio" name="drink" value="coffee" id="option5">
+    <label for="option5">Coffee</label>
+    <br>
+    <input type="radio" name="drink" value="tea" id="option6">
+    <label for="option6">Tea</label>
+    <br>
+    <input type="radio" name="drink" value="hotchocolate" id="option7">
+    <label for="option7">Hot Chocolate</label>
+    <br>
+    <input type="radio" name="drink" value="Lemonade" id="option8">
+    <label for="option8">Lemonade</label>
+    <br>
+    <ol></ol>
+    <!--this asks for the user's perfered bevrage choice and again only provided four radio button options -->
+
+    <label for="day_type">4.What kind of day are you built for?</label>
+    <br><select name="day_type" value="day_type" required>
+        <option value="blank"></option>
+        <option value="sunday">Sunday reset with facemasks</option>
+        <option value="rainy day">A rainy day curled up with a book</option>
+        <option value="morning run">Early morning run in the mountains</option>
+        <option value="concert">Loud concert and In&Out afterwards</option>
+    </select><br>
+    <!--this asks the user what kind of day they perfer and provideds a required dropdown menu with four options-->
+
+    <ol></ol>
+    <input type="submit" value="submit!">
+    <!--this adds a submit button to sends the data to the results page when done-->
+
+</form>
+        
+</body>
+</html>
